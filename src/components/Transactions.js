@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
 import Transaction from './Transaction';
- class Transactions extends Component {
-     constructor(props) {
-         super(props);
-         this.state = { data :[]}
-     }
+class Transactions extends Component {
+    constructor() {
+        super();
+        this.state = { data: [] }
+    }
 
-        componentDidMount(){
-            this.setState({data: this.props.data})
-        }
- 
-         render(){ 
-         let data = this.props.data
-         
-         console.log(this.props.data)
-            debugger
-         return (<div>
-             {data.map((t)=> <Transaction deleteTransaction={this.props.deleteTransaction}  deleteTransaction={this.deleteTransaction} id={t.vendor} key={t.vendor} t={t} />)}
-         </div>  );
+    componentDidMount() {
+        this.setState({ data: this.props.data })
+    }
 
-     }
- }
-  
- export default Transactions;
+    render() {
+        let data = this.props.data
+
+        return (<div>
+            {data.map((t) => <Transaction deleteTransactionTransactions={this.props.deleteTransactionOperation} id={t.vendor} key={t.amount} t={t} />)}
+        </div>);
+
+    }
+}
+
+export default Transactions;

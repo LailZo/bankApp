@@ -3,26 +3,24 @@ import React, { Component } from 'react';
 class Transaction extends Component {
     constructor() {
         super();
-        this.state = {  }
+        this.state = {}
     }
 
 
-    deleteTransaction=()=>{
-    this.props.deleteTransaction(this.props.t)
-    
+    deleteTransaction = () => {
+        this.props.deleteTransactionTransactions(this.props.t)
+
     }
 
-    render(){ 
+    render() {
         let t = this.props.t
-        console.log(this.props)
-        debugger;
-        return ( <div>
+        return (<div>
             <div>{t.amount}</div>
             <div>{t.vendor}</div>
             <div>{t.category}</div>
             <button id={t.amount} onClick={this.deleteTransaction}>Delete</button>
-        </div> );
+        </div>);
     }
 }
- 
+
 export default Transaction;
